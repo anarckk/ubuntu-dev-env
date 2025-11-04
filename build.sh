@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build -t ubuntu-dev-env:latest .
+docker build -t anarckk/ubuntu-dev-env:latest .
