@@ -27,6 +27,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     unzip \
     zip \
     jq \
+    tmux \
+    telnet \
     && rm -rf /var/lib/apt/lists/*
 
 # 安装 OpenJDK 21
@@ -95,7 +97,9 @@ RUN java -version && \
     npm --version && \
     docker --version && \
     git --version && \
-    code-server --version
+    code-server --version && \
+    tmux -V && \
+    telnet --version
 
 # 设置默认命令（启动 code-server）
 CMD ["code-server", "--bind-addr", "0.0.0.0:8080", "/root/workspace"]
@@ -133,6 +137,8 @@ CMD ["code-server", "--bind-addr", "0.0.0.0:8080", "/root/workspace"]
 #   vim/nano - 文本编辑
 #   tree - 目录结构展示
 #   jq - JSON数据处理
+#   tmux - 终端复用器
+#   telnet - 网络连接测试工具
 
 # Git 命令：
 #   git clone - 克隆仓库
