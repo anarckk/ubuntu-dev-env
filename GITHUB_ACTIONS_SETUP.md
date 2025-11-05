@@ -50,7 +50,7 @@
 ### 自动更新 Docker Hub 描述
 
 工作流会自动：
-1. 将项目描述更新到 Docker Hub
+1. 使用 Docker Hub API 获取 bearer token
 2. 将 README.md 内容上传为 Docker Hub 的完整描述
 
 ## 故障排除
@@ -68,6 +68,11 @@
 3. **README 上传失败**
    - 检查 README.md 文件是否存在
    - 确认 Docker Hub 仓库已存在
+   - 确认 jq 工具可用（在 Ubuntu runner 中默认安装）
+
+4. **Bearer token 获取失败**
+   - 检查 Docker Hub API 端点是否可访问
+   - 确认个人访问令牌有效
 
 ### 手动测试
 

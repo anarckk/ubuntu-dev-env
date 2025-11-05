@@ -2,6 +2,9 @@
 
 一个基于 Docker 的 Ubuntu 开发环境，预装了常用的开发工具和 code-server，提供完整的云端开发体验。
 
+dockerhub：https://hub.docker.com/r/anarckk/ubuntu-dev-env
+github: https://github.com/anarckk/ubuntu-dev-env
+
 ## Docker Hub 部署
 
 本项目已部署到 Docker Hub，可以直接拉取使用：
