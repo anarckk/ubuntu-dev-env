@@ -11,7 +11,7 @@ github: https://github.com/anarckk/ubuntu-dev-env
 本项目已部署到 Docker Hub，可以直接拉取使用：
 
 ```bash
-docker pull anarckk/ubuntu-dev-env:latest
+docker pull anarckk/ubuntu-dev-env:main
 ```
 
 ## 项目概述
@@ -43,7 +43,7 @@ docker pull anarckk/ubuntu-dev-env:latest
 
 ```bash
 # 拉取最新镜像
-docker pull anarckk/ubuntu-dev-env:latest
+docker pull anarckk/ubuntu-dev-env:main
 
 # 运行开发环境
 docker run -d \
@@ -51,7 +51,7 @@ docker run -d \
   -p 8080:8080 \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v $(pwd)/workspace:/root/workspace \
-  anarckk/ubuntu-dev-env:latest
+  anarckk/ubuntu-dev-env:main
 ```
 
 ### 方式二：本地构建镜像
@@ -61,7 +61,7 @@ docker run -d \
 ./build.sh
 
 # 或手动构建
-docker build -t anarckk/ubuntu-dev-env:latest .
+docker build -t anarckk/ubuntu-dev-env:main .
 
 # 运行容器
 docker run -d \
@@ -69,7 +69,7 @@ docker run -d \
   -p 8080:8080 \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v $(pwd)/workspace:/root/workspace \
-  anarckk/ubuntu-dev-env:latest
+  anarckk/ubuntu-dev-env:main
 ```
 
 ### 访问开发环境
