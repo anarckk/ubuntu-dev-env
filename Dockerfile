@@ -6,6 +6,11 @@ MAINTAINER anarckk "anarckk@gmail.com"
 # 设置非交互式安装以避免提示（仅在构建时使用）
 ENV DEBIAN_FRONTEND=noninteractive
 
+# 设置中文环境
+ENV LANG=zh_CN.UTF-8
+ENV LANGUAGE=zh_CN:zh
+ENV LC_ALL=zh_CN.UTF-8
+
 # 设置工作目录
 WORKDIR /workspace
 
@@ -29,7 +34,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     jq \
     tmux \
     telnet \
-    && rm -rf /var/lib/apt/lists/*
+    language-pack-zh-hans \
+    language-pack-zh-hans-base \
+    locales \
+    && locale-gen zh_CN.UTF-8
 
 # 安装 OpenJDK 21
 RUN apt-get update && apt-get install -y --no-install-recommends openjdk-21-jdk \
