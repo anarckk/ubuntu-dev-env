@@ -85,7 +85,8 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN curl -fsSL https://code-server.dev/install.sh | sh
 
 # 安装 claudecode
-RUN curl -fsSL https://claude.ai/install.sh | bash
+RUN curl -fsSL https://claude.ai/install.sh | bash && \
+    echo 'export PATH="/root/.local/bin:$PATH"' >> /root/.bashrc
 
 # 创建 code-server 配置目录和数据目录
 RUN mkdir -p /root/.config/code-server && \
