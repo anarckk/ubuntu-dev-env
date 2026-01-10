@@ -53,7 +53,7 @@ RUN wget -O /tmp/gradle.zip https://services.gradle.org/distributions/gradle-8.7
     && ln -s /opt/gradle/gradle-8.7/bin/gradle /usr/bin/gradle
 
 # 安装 Maven
-RUN wget -O /tmp/maven.tar.gz https://dlcdn.apache.org/maven/maven-3/3.9.11/binaries/apache-maven-3.9.11-bin.tar.gz \
+RUN wget -O /tmp/maven.tar.gz https://archive.apache.org/dist/maven/maven-3/3.9.11/binaries/apache-maven-3.9.11-bin.tar.gz \
     && tar -xzf /tmp/maven.tar.gz -C /opt \
     && rm /tmp/maven.tar.gz \
     && ln -s /opt/apache-maven-3.9.11/bin/mvn /usr/bin/mvn
@@ -83,6 +83,9 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # 安装 code-server
 RUN curl -fsSL https://code-server.dev/install.sh | sh
+
+# 安装 claudecode
+RUN curl -fsSL https://claude.ai/install.sh | bash
 
 # 创建 code-server 配置目录和数据目录
 RUN mkdir -p /root/.config/code-server && \
